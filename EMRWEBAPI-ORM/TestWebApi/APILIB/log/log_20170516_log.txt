@@ -1,0 +1,10 @@
+﻿2017-05-16 12:04:57 >> setp:getmssqlconnstr 2017-05-16 12:05:04 >> setp:getWebConfigstr2017-05-16 12:05:12 >> 並未將物件參考設定為物件的執行個體。2017-05-16 12:05:34 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;2017-05-16 13:29:16 >> Get ConnectionString2017-05-16 13:30:13 >> setp:getmssqlconnstr 2017-05-16 13:30:15 >> setp:getWebConfigstr2017-05-16 13:30:15 >> 並未將物件參考設定為物件的執行個體。2017-05-16 13:30:19 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;2017-05-16 13:30:19 >> finish errormessage:setp:getWebConfigstr
+並未將物件參考設定為物件的執行個體。
+2017-05-16 13:32:54 >> Get ConnectionString
+2017-05-16 13:53:56 >> setp:getmssqlconnstr 
+2017-05-16 13:54:01 >> setp:getWebConfigstr
+2017-05-16 13:54:01 >> 並未將物件參考設定為物件的執行個體。
+2017-05-16 13:54:01 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-16 13:54:01 >> finish errormessage:setp:getWebConfigstr
+並未將物件參考設定為物件的執行個體。
+

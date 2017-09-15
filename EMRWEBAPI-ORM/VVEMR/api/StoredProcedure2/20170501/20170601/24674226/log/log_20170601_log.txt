@@ -1,0 +1,2 @@
+﻿2017-06-01 17:29:39 >> setp:getmssqlconnstr 
+2017-06-01 17:29:40 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.90;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;Max Pool Size=5;Min Pool Size=1;Pooling=true;

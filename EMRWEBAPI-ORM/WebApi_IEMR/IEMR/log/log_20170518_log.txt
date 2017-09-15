@@ -1,0 +1,6 @@
+﻿2017-05-18 18:35:34 >> Get ConnectionString
+2017-05-18 18:36:00 >> setp:getmssqlconnstr 
+2017-05-18 18:36:16 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-18 18:36:28 >> finish errormessage:setp:getconnstr2017 
+
+2017-05-18 18:55:51 >> Get ConnectionString

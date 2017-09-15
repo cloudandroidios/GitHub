@@ -1,0 +1,26 @@
+﻿2017-05-31 17:16:37 >> setp:getmssqlconnstr 
+2017-05-31 17:16:39 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:16:55 >> errormessage:setp:getconnstr2017 
+必須宣告純量變數 "@sCode"。
+2017-05-31 17:18:17 >> setp:getmssqlconnstr 
+2017-05-31 17:18:17 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:18:31 >> errormessage:setp:getconnstr2017 
+必須宣告純量變數 "@P1sCode"。
+2017-05-31 17:19:26 >> setp:getmssqlconnstr 
+2017-05-31 17:19:26 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:23:38 >> setp:getmssqlconnstr 
+2017-05-31 17:23:39 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:41:56 >> setp:getmssqlconnstr 
+2017-05-31 17:41:57 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:46:24 >> setp:getmssqlconnstr 
+2017-05-31 17:46:24 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:48:31 >> errormessage:setp:getconnstr2017 
+命令參數[1] '' 無效。
+
+2017-05-31 17:52:02 >> setp:getmssqlconnstr 
+2017-05-31 17:52:03 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-31 17:52:42 >> errormessage:setp:getconnstr2017 
+命令參數[1] '' 無效。
+
+2017-05-31 17:54:51 >> setp:getmssqlconnstr 
+2017-05-31 17:54:51 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;

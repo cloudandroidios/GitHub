@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cch.org.tw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://cch.org.tw/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cch.org.tw/">
+      <s:element name="CommunicationEMRTransaction_Count">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SYSTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationEMRTransaction_CountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommunicationEMRTransaction_CountResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationEMRTransaction_NotTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SYSTYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doctype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dockey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationEMRTransaction_NotTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommunicationEMRTransaction_NotTransResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Cch_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userwp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Cch_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Check_Cch_IDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_cch_manager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_cch_managerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_cch_managerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_cch_manager_list">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Stream_tmp" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="tablenames" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_cch_manager_listResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_cch_manager_listResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationEMR_PTS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s_chart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_acc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_emp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationEMR_PTSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommunicationEMR_PTSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="_Load_System_type">
+        <s:complexType />
+      </s:element>
+      <s:element name="_Load_System_typeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Load_System_typeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="_Load_Manage_List">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="flags" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="_Load_Manage_ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Load_Manage_ListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Return_Patient_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chard_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Return_Patient_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Return_Patient_idResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Cch_IDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userwp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Cch_IDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Check_Cch_IDsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Return_Cch_Power">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="func_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Return_Cch_PowerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Return_Cch_PowerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Return_Cch_SubPower">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="func_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subfunc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Return_Cch_SubPowerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Return_Cch_SubPowerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadEmrFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadEmrFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadEmrFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageType">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetImageTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitEMRTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doctype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dockey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="verdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitEMRTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitEMRTransactionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitEMRSignature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doctype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dockey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="verdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signdate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitEMRSignatureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CommitEMRSignatureResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMRPARMT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PARMTNAM" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEMRPARMTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEMRPARMTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CountDirectoryfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paths" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CountDirectoryfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountDirectoryfileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocSeq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocDataResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CommunicationEMRTransaction_CountSoapIn">
+    <wsdl:part name="parameters" element="tns:CommunicationEMRTransaction_Count" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationEMRTransaction_CountSoapOut">
+    <wsdl:part name="parameters" element="tns:CommunicationEMRTransaction_CountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationEMRTransaction_NotTransSoapIn">
+    <wsdl:part name="parameters" element="tns:CommunicationEMRTransaction_NotTrans" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationEMRTransaction_NotTransSoapOut">
+    <wsdl:part name="parameters" element="tns:CommunicationEMRTransaction_NotTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="Check_Cch_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:Check_Cch_ID" />
+  </wsdl:message>
+  <wsdl:message name="Check_Cch_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:Check_Cch_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_cch_managerSoapIn">
+    <wsdl:part name="parameters" element="tns:get_cch_manager" />
+  </wsdl:message>
+  <wsdl:message name="get_cch_managerSoapOut">
+    <wsdl:part name="parameters" element="tns:get_cch_managerResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_cch_manager_listSoapIn">
+    <wsdl:part name="parameters" element="tns:get_cch_manager_list" />
+  </wsdl:message>
+  <wsdl:message name="get_cch_manager_listSoapOut">
+    <wsdl:part name="parameters" element="tns:get_cch_manager_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationEMR_PTSSoapIn">
+    <wsdl:part name="parameters" element="tns:CommunicationEMR_PTS" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationEMR_PTSSoapOut">
+    <wsdl:part name="parameters" element="tns:CommunicationEMR_PTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="_Load_System_typeSoapIn">
+    <wsdl:part name="parameters" element="tns:_Load_System_type" />
+  </wsdl:message>
+  <wsdl:message name="_Load_System_typeSoapOut">
+    <wsdl:part name="parameters" element="tns:_Load_System_typeResponse" />
+  </wsdl:message>
+  <wsdl:message name="_Load_Manage_ListSoapIn">
+    <wsdl:part name="parameters" element="tns:_Load_Manage_List" />
+  </wsdl:message>
+  <wsdl:message name="_Load_Manage_ListSoapOut">
+    <wsdl:part name="parameters" element="tns:_Load_Manage_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Return_Patient_idSoapIn">
+    <wsdl:part name="parameters" element="tns:Return_Patient_id" />
+  </wsdl:message>
+  <wsdl:message name="Return_Patient_idSoapOut">
+    <wsdl:part name="parameters" element="tns:Return_Patient_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="Check_Cch_IDsSoapIn">
+    <wsdl:part name="parameters" element="tns:Check_Cch_IDs" />
+  </wsdl:message>
+  <wsdl:message name="Check_Cch_IDsSoapOut">
+    <wsdl:part name="parameters" element="tns:Check_Cch_IDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Return_Cch_PowerSoapIn">
+    <wsdl:part name="parameters" element="tns:Return_Cch_Power" />
+  </wsdl:message>
+  <wsdl:message name="Return_Cch_PowerSoapOut">
+    <wsdl:part name="parameters" element="tns:Return_Cch_PowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Return_Cch_SubPowerSoapIn">
+    <wsdl:part name="parameters" element="tns:Return_Cch_SubPower" />
+  </wsdl:message>
+  <wsdl:message name="Return_Cch_SubPowerSoapOut">
+    <wsdl:part name="parameters" element="tns:Return_Cch_SubPowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadEmrFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadEmrFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadEmrFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadEmrFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImage" />
+  </wsdl:message>
+  <wsdl:message name="GetImageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageType" />
+  </wsdl:message>
+  <wsdl:message name="GetImageTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitEMRTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitEMRTransaction" />
+  </wsdl:message>
+  <wsdl:message name="CommitEMRTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitEMRTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitEMRSignatureSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitEMRSignature" />
+  </wsdl:message>
+  <wsdl:message name="CommitEMRSignatureSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitEMRSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEMRPARMTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEMRPARMT" />
+  </wsdl:message>
+  <wsdl:message name="GetEMRPARMTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEMRPARMTResponse" />
+  </wsdl:message>
+  <wsdl:message name="CountDirectoryfileSoapIn">
+    <wsdl:part name="parameters" element="tns:CountDirectoryfile" />
+  </wsdl:message>
+  <wsdl:message name="CountDirectoryfileSoapOut">
+    <wsdl:part name="parameters" element="tns:CountDirectoryfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocData" />
+  </wsdl:message>
+  <wsdl:message name="GetDocDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="CommunicationEMRTransaction_Count">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查詢電子病歷虛擬交易狀態(SYSTYPE必填)</wsdl:documentation>
+      <wsdl:input message="tns:CommunicationEMRTransaction_CountSoapIn" />
+      <wsdl:output message="tns:CommunicationEMRTransaction_CountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationEMRTransaction_NotTrans">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查詢電子病歷未完交易(SYSTYPE,date1,date2 必填)</wsdl:documentation>
+      <wsdl:input message="tns:CommunicationEMRTransaction_NotTransSoapIn" />
+      <wsdl:output message="tns:CommunicationEMRTransaction_NotTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_Cch_ID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢核彰基密碼</wsdl:documentation>
+      <wsdl:input message="tns:Check_Cch_IDSoapIn" />
+      <wsdl:output message="tns:Check_Cch_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_cch_manager">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用來查詢取得彰基單位主管，成功則回傳主管代碼 [string]，失敗則回傳空字串</wsdl:documentation>
+      <wsdl:input message="tns:get_cch_managerSoapIn" />
+      <wsdl:output message="tns:get_cch_managerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_cch_manager_list">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用來查詢彰基單位主管清單，成功則回傳byte，失敗則回傳byte[0]</wsdl:documentation>
+      <wsdl:input message="tns:get_cch_manager_listSoapIn" />
+      <wsdl:output message="tns:get_cch_manager_listSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationEMR_PTS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查詢敏感性病歷電子病歷</wsdl:documentation>
+      <wsdl:input message="tns:CommunicationEMR_PTSSoapIn" />
+      <wsdl:output message="tns:CommunicationEMR_PTSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="_Load_System_type">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">撈系統類別資料</wsdl:documentation>
+      <wsdl:input message="tns:_Load_System_typeSoapIn" />
+      <wsdl:output message="tns:_Load_System_typeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="_Load_Manage_List">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">撈主管LIST資料</wsdl:documentation>
+      <wsdl:input message="tns:_Load_Manage_ListSoapIn" />
+      <wsdl:output message="tns:_Load_Manage_ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Return_Patient_id">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">回傳患者IDNO(回傳為String:-1,-2,-3:為錯誤代碼)</wsdl:documentation>
+      <wsdl:input message="tns:Return_Patient_idSoapIn" />
+      <wsdl:output message="tns:Return_Patient_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_Cch_IDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢核彰基密碼(回傳為String:-1,-2為錯誤代碼,0:為失敗,1:為成功)</wsdl:documentation>
+      <wsdl:input message="tns:Check_Cch_IDsSoapIn" />
+      <wsdl:output message="tns:Check_Cch_IDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Return_Cch_Power">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢核彰基EMR權限(回傳為String:-1,-2為錯誤代碼,or other)</wsdl:documentation>
+      <wsdl:input message="tns:Return_Cch_PowerSoapIn" />
+      <wsdl:output message="tns:Return_Cch_PowerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Return_Cch_SubPower">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢核彰基EMR SubFunction 權限(回傳為DataTable)</wsdl:documentation>
+      <wsdl:input message="tns:Return_Cch_SubPowerSoapIn" />
+      <wsdl:output message="tns:Return_Cch_SubPowerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEmrFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下載原始檔案DownloadEmrFile(回傳為byte二進位格式)</wsdl:documentation>
+      <wsdl:input message="tns:DownloadEmrFileSoapIn" />
+      <wsdl:output message="tns:DownloadEmrFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web 服务提供的方法，返回给定文件的檔案</wsdl:documentation>
+      <wsdl:input message="tns:GetImageSoapIn" />
+      <wsdl:output message="tns:GetImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web 服務提供的方法，傳回特定文件類型。</wsdl:documentation>
+      <wsdl:input message="tns:GetImageTypeSoapIn" />
+      <wsdl:output message="tns:GetImageTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web 服务提供的方法，返回是否文件上载成功与否。</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitEMRTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">完成電子病歷本文檔上載</wsdl:documentation>
+      <wsdl:input message="tns:CommitEMRTransactionSoapIn" />
+      <wsdl:output message="tns:CommitEMRTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitEMRSignature">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">完成電子病歷簽章</wsdl:documentation>
+      <wsdl:input message="tns:CommitEMRSignatureSoapIn" />
+      <wsdl:output message="tns:CommitEMRSignatureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEMRPARMT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得電子病歷參數檔資料</wsdl:documentation>
+      <wsdl:input message="tns:GetEMRPARMTSoapIn" />
+      <wsdl:output message="tns:GetEMRPARMTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CountDirectoryfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得電子病歷主機路徑檔案數</wsdl:documentation>
+      <wsdl:input message="tns:CountDirectoryfileSoapIn" />
+      <wsdl:output message="tns:CountDirectoryfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得圖文系統的文件資料</wsdl:documentation>
+      <wsdl:input message="tns:GetDocDataSoapIn" />
+      <wsdl:output message="tns:GetDocDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommunicationEMRTransaction_Count">
+      <soap:operation soapAction="http://cch.org.tw/CommunicationEMRTransaction_Count" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationEMRTransaction_NotTrans">
+      <soap:operation soapAction="http://cch.org.tw/CommunicationEMRTransaction_NotTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Cch_ID">
+      <soap:operation soapAction="http://cch.org.tw/Check_Cch_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_cch_manager">
+      <soap:operation soapAction="http://cch.org.tw/get_cch_manager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_cch_manager_list">
+      <soap:operation soapAction="http://cch.org.tw/get_cch_manager_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationEMR_PTS">
+      <soap:operation soapAction="http://cch.org.tw/CommunicationEMR_PTS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_Load_System_type">
+      <soap:operation soapAction="http://cch.org.tw/_Load_System_type" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_Load_Manage_List">
+      <soap:operation soapAction="http://cch.org.tw/_Load_Manage_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Return_Patient_id">
+      <soap:operation soapAction="http://cch.org.tw/Return_Patient_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Cch_IDs">
+      <soap:operation soapAction="http://cch.org.tw/Check_Cch_IDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Return_Cch_Power">
+      <soap:operation soapAction="http://cch.org.tw/Return_Cch_Power" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Return_Cch_SubPower">
+      <soap:operation soapAction="http://cch.org.tw/Return_Cch_SubPower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEmrFile">
+      <soap:operation soapAction="http://cch.org.tw/DownloadEmrFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap:operation soapAction="http://cch.org.tw/GetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageType">
+      <soap:operation soapAction="http://cch.org.tw/GetImageType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://cch.org.tw/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitEMRTransaction">
+      <soap:operation soapAction="http://cch.org.tw/CommitEMRTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitEMRSignature">
+      <soap:operation soapAction="http://cch.org.tw/CommitEMRSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMRPARMT">
+      <soap:operation soapAction="http://cch.org.tw/GetEMRPARMT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountDirectoryfile">
+      <soap:operation soapAction="http://cch.org.tw/CountDirectoryfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocData">
+      <soap:operation soapAction="http://cch.org.tw/GetDocData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommunicationEMRTransaction_Count">
+      <soap12:operation soapAction="http://cch.org.tw/CommunicationEMRTransaction_Count" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationEMRTransaction_NotTrans">
+      <soap12:operation soapAction="http://cch.org.tw/CommunicationEMRTransaction_NotTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Cch_ID">
+      <soap12:operation soapAction="http://cch.org.tw/Check_Cch_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_cch_manager">
+      <soap12:operation soapAction="http://cch.org.tw/get_cch_manager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_cch_manager_list">
+      <soap12:operation soapAction="http://cch.org.tw/get_cch_manager_list" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationEMR_PTS">
+      <soap12:operation soapAction="http://cch.org.tw/CommunicationEMR_PTS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_Load_System_type">
+      <soap12:operation soapAction="http://cch.org.tw/_Load_System_type" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="_Load_Manage_List">
+      <soap12:operation soapAction="http://cch.org.tw/_Load_Manage_List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Return_Patient_id">
+      <soap12:operation soapAction="http://cch.org.tw/Return_Patient_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Cch_IDs">
+      <soap12:operation soapAction="http://cch.org.tw/Check_Cch_IDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Return_Cch_Power">
+      <soap12:operation soapAction="http://cch.org.tw/Return_Cch_Power" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Return_Cch_SubPower">
+      <soap12:operation soapAction="http://cch.org.tw/Return_Cch_SubPower" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEmrFile">
+      <soap12:operation soapAction="http://cch.org.tw/DownloadEmrFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap12:operation soapAction="http://cch.org.tw/GetImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageType">
+      <soap12:operation soapAction="http://cch.org.tw/GetImageType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://cch.org.tw/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitEMRTransaction">
+      <soap12:operation soapAction="http://cch.org.tw/CommitEMRTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitEMRSignature">
+      <soap12:operation soapAction="http://cch.org.tw/CommitEMRSignature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMRPARMT">
+      <soap12:operation soapAction="http://cch.org.tw/GetEMRPARMT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountDirectoryfile">
+      <soap12:operation soapAction="http://cch.org.tw/CountDirectoryfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocData">
+      <soap12:operation soapAction="http://cch.org.tw/GetDocData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://192.168.19.88/EMRWebSrvCum/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://192.168.19.88/EMRWebSrvCum/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

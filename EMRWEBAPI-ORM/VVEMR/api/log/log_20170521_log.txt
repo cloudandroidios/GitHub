@@ -1,0 +1,13 @@
+﻿2017-05-21 15:31:55 >> Get ConnectionString
+2017-05-21 15:31:55 >> setp:getmssqlconnstr 
+2017-05-21 15:31:55 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.88;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;
+2017-05-21 15:31:55 >> finish errormessage:setp:getconnstr2017 
+
+2017-05-21 15:33:01 >> Get ConnectionString
+2017-05-21 15:33:01 >> setp:getmssqlconnstr 
+2017-05-21 15:33:01 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.90;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;Max Pool Size=5;Min Pool Size=1;Pooling=true;
+2017-05-21 15:33:01 >> finish errormessage:setp:getconnstr2017 
+
+2017-05-21 15:33:13 >> Get ConnectionString
+2017-05-21 15:33:13 >> finish errormessage:setp:getmssqlconnstr 
+

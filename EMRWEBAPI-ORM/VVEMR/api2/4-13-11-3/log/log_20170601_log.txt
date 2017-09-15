@@ -1,0 +1,8 @@
+﻿2017-06-01 10:46:01 >> setp:getmssqlconnstr 
+2017-06-01 10:46:02 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.90;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;Max Pool Size=5;Min Pool Size=1;Pooling=true;
+2017-06-01 10:46:30 >> errormessage:setp:getconnstr2017 
+ConnectionString 屬性尚未初始化。
+2017-06-01 10:54:33 >> setp:getmssqlconnstr 
+2017-06-01 10:54:33 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.90;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;Max Pool Size=5;Min Pool Size=1;Pooling=true;
+2017-06-01 11:30:09 >> setp:getmssqlconnstr 
+2017-06-01 11:30:10 >> return_connstr:Provider=SQLOLEDB.1;Data Source=192.168.19.90;Initial Catalog=emrdb;UID=emr;PWD=emr2010~;Max Pool Size=5;Min Pool Size=1;Pooling=true;
